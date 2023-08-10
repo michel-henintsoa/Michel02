@@ -16,7 +16,7 @@ void compression(char* dirname);
 void entrer_crtsq(char* user, char* passwd, char* ip, char* ssh, char* scp);
 void se_connecter(char* user, char* ip, char* passwd, char* dirname, char* ssh, char* scp);
 
-void new_user_data(char* name, char* password, char* dirname, char* ssh, char* scp);
+void new_user_data(char *ip,char* name, char* password, char* dirname, char* ssh, char* scp);
 void nouvel_utilisateur(char* passwd, char* user, char* ip, char* dirname, char* ssh, char* scp);
 void userCreate(char* user, char* passwd, char* ip, char* name, char* password, char* dirname, char* ssh, char* scp);
 void transfertN(char* name, char* password, char* ip, char* dirname);
@@ -117,6 +117,7 @@ int main() {
 //--------------------------------------------------------------------//		
 		
 	}
+	printf("\n");
 	printf("Continuer ou arreter(oui/non)\n");
 	scanf("%s",lance);
 	}while(strcmp(lance,"oui") == 0);
@@ -321,7 +322,7 @@ void se_connecter(char* user, char* ip, char* passwd, char* dirname, char* ssh, 
 	printf("\n\tTravail terminé, retour au menu !");
 
 }
-void new_user_data(char* name, char* password, char* dirname, char* ssh, char* scp){
+void new_user_data(char *ip,char* name, char* password, char* dirname, char* ssh, char* scp){
 	int choix = 10;
 	char Choix[100];
 	
@@ -343,7 +344,7 @@ void new_user_data(char* name, char* password, char* dirname, char* ssh, char* s
 		
 		char michel = 'n';
 		char user[100];
-		char ip[100];
+//		char ip[100];
 		char passwd[100];
 	
 		while(michel != 'o' || michel != 'O' || michel != 'y' || michel != 'Y'){
@@ -385,7 +386,7 @@ void nouvel_utilisateur(char* passwd, char* user, char* ip, char* dirname, char*
 	/* Le mot de passe du nouvel utilisateur */
 	char password[64];
 
-	new_user_data(name, password, dirname, ssh, scp);
+	new_user_data(ip,name, password, dirname, ssh, scp);
 	transfertN(name, password, ip, dirname);
 
 }
@@ -393,27 +394,34 @@ void transfertN(char* name, char* password, char* ip, char* dirname){
 	
 	char commande[400];		// La commande pour la copie
 	char creation[400];		// La commande pour la création du repertoire
-	char permission[1000];		// La commande pour changer la permission du fichier
+//	char permission[1000];		// La commande pour changer la permission du fichier
 	int test = 20;			// Variable utilisé pour tester le retour des fonctions
-
+	char ip1[30];
+	
+	strcpy(ip1,ip);
+//	printf("Le ip est %s\n",ip1);
+//	scanf("%s",ip1);
 	/* Création du dossier contenant */
-	sprintf(creation, "sshpass -p \"%s\" ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null %s@%s \"mkdir -p ~/Backup 2> /dev/null\"", password, name, ip);
+	sprintf(creation, "sshpass -p \"%s\" ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null %s@%s \"mkdir -p ~/Backup 2> /dev/null\"", password, name, ip1);
 	test = system(creation);
-
+	
 	if(test == 0) {
 		printf("Répertoire créée avec succès.\n");
 	} else {
 		printf("Erreur lors de la création du repertoire\n");
 	}
-
-	sprintf(commande,"sshpass -p \"%s\" ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null ~/%s.tar.gz %s@%s:~/Backup/ ", password, dirname, name, ip);
+	printf("Le ip est %s\n",ip1);
+//	scanf("%s",ip1);
+//	sprintf(commande,"scp -o StrictHostKeyChecking=yes -o UserKnownHostsFile=/dev/null ~/%s.tar.gz %s@%s:/home/%s/Backup/ ",password,dirname, name, ip1,name);
+	sprintf(commande,"scp -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null ./%s.tar.gz %s@%s:~/Backup/ ",dirname, name, ip1);
 	system(commande);
+	
+	printf("%s\n",commande);
+	
+//	sprintf(permission, "sshpass -p \"%s\" ssh -o StrictHostKeyChecking=yes -o UserKnownHostsFile=/dev/null %s@%s \"chmod 700 ~/Backup/%s.tar.gz \"", password, name, ip1, dirname);
+//	system(permission);
 
-	sprintf(permission, "sshpass -p \"%s\" ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null %s@%s \"chmod 700 ~/Backup/%s.tar.gz \"", password, name, ip, dirname);
-	system(permission);
-
-	system("clear");
-
+//	system("clear");
 	printf("L'ARCHIVE DE VOS FICHIERS A ÉTÉ COPIÉ AVEC SUCCÈS DANS /home/%s/Backup/", name);
 	printf("\n\tTravail terminé, retour au menu !");	
 	
@@ -428,17 +436,17 @@ void userCreate(char* user, char* passwd, char* ip, char* name, char* password, 
 
 	/* Écriture du fichier temporaire */
 
-	FILE *fichier = fopen("Temporarfile.txt", "w");
+	FILE *fichier = fopen("Temporarfile.txt", "rw");
 		fprintf(fichier, "%s\n%s\n%s\n\n\n\n\n\nyes\n", passwd, password, password);
 	fclose(fichier);
 
  	sprintf(cmduser, "sudo -S adduser %s ", name);
 
  	// Copie le fichier Temporaire dans la mahine distante
- 	sprintf(copieTemporaire, "sshpass -p \"%s\" scp -o StricthostKeyChecking=yes ./Temporarfile.txt %s@%s:~/ 2> /dev/null", passwd, user, ip);
+ 	sprintf(copieTemporaire, "sshpass -p \"%s\" scp -o StricthostKeyChecking=no ./Temporarfile.txt %s@%s:~/ 2> /dev/null", passwd, user, ip);
  	system(copieTemporaire);
 
-	sprintf(commande, "sshpass -p \"%s\" ssh -o StrictHostKeyChecking=yes %s@%s \"%s < Temporarfile.txt\" 2> /dev/null", passwd, user, ip, cmduser);
+	sprintf(commande, "sshpass -p \"%s\" ssh -o StrictHostKeyChecking=no %s@%s \"%s < Temporarfile.txt\" 2> /dev/null", passwd, user, ip, cmduser);
 	system(commande);
 	
 	system("clear");
@@ -510,79 +518,79 @@ void sansnoms_transfert(char *choix,char *ip,char *user,char *fichier,char *loca
         char uti0[] = "tput setaf 4;figlet -f big 1-recevoir  2-envoyer;tput sgr0";
         while(strcmp(choix,"1") != 0 && strcmp(choix,"2") != 0){
 		system(uti0); 		
-        	printf("\n");
-        	scanf("%s",choix);
+        printf("\n");
+        scanf("%s",choix);
         }
         system("clear");
 ///------------------------------------------------------------------///        
         if(strcmp(choix,"1")==0){
 		char receive1[] ="Veuillez montrez ces informations à l'envoyeur : ";
 		for(int i=0;receive1[i] != '\0';i++){
-			printf("%c",receive1[i]);
-			fflush(stdout);
-			usleep(30000);	
+		printf("%c",receive1[i]);
+		fflush(stdout);
+		usleep(30000);	
 		}
 		printf("\n");
 		printf("\n");
 		printf("Adresse IP : \n");system("hostname -I");
 		printf("\n");
-        	printf("Nom d'utilisateur : \n");system("whoami");
+        printf("Nom d'utilisateur : \n");system("whoami");
         }
 ///------------------------------------------------------------------///        
 					//information sur le machine recepteur
 //--------------------------------------------------------------------//
         if(strcmp(choix,"2")==0){			
 		char uti1[] = "entrez l'adresse IP du machine distant : ";
-        	for(int i=0;uti1[i] != '\0';i++){
-			printf("%c",uti1[i]);
-			fflush(stdout);
-			usleep(30000);	
+        for(int i=0;uti1[i] != '\0';i++){
+		printf("%c",uti1[i]);
+		fflush(stdout);
+		usleep(30000);	
 		}
-        	printf("\n");
-        	scanf("%s",ip);
-        	system("clear");
-        	char uti2[] = "entrez le nom d'utilisateur du machine distant : ";
-        	for(int i=0;uti2[i] != '\0';i++){
-			printf("%c",uti2[i]);
-			fflush(stdout);
-			usleep(30000);	
+        printf("\n");
+        scanf("%s",ip);
+        system("clear");
+        char uti2[] = "entrez le nom d'utilisateur du machine distant : ";
+        for(int i=0;uti2[i] != '\0';i++){
+		printf("%c",uti2[i]);
+		fflush(stdout);
+		usleep(30000);	
 		}
-        	printf("\n");
-        	scanf("%s",user);
-        	system("clear");
+        printf("\n");
+        scanf("%s",user);
+        system("clear");
 //--------------------------------------------------------------------//        
 					//localisation du fichier
 //--------------------------------------------------------------------//
 		char uti3[] = "entrez le nom du fichier : ";
-        	for(int i=0;uti3[i] != '\0';i++){
-			printf("%c",uti3[i]);
-			fflush(stdout);
-			usleep(30000);	
+        for(int i=0;uti3[i] != '\0';i++){
+		printf("%c",uti3[i]);
+		fflush(stdout);
+		usleep(30000);	
 		}  
-        	printf("\n");
-        	scanf("%s",fichier);
-        	system("clear");
+        printf("\n");
+        scanf("%s",fichier);
+        system("clear");
         
 		char tmp[1000];
 		sprintf(tmp,"Envoye du %s vers %s:%s",fichier,user,ip);
 		for(int i=0;tmp[i] != '\0';i++){
-			printf("%c",tmp[i]);
-			fflush(stdout);
-			usleep(30000);	
+		printf("%c",tmp[i]);
+		fflush(stdout);
+		usleep(30000);	
 		}
 		printf("\n");
-        	char chargement[] = "Attendez un moment ...";
-        	for(int i=0;chargement[i] != '\0';i++){
-			printf("%c",chargement[i]);
-			fflush(stdout);
-			usleep(30000);	
+        char chargement[] = "Attendez un moment ...";
+        for(int i=0;chargement[i] != '\0';i++){
+		printf("%c",chargement[i]);
+		fflush(stdout);
+		usleep(30000);	
 		}	
-        	sprintf(locate,"cp -r $(find /home -name \"%s\" 2>/dev/null) sans_nom/ 2>/dev/null",fichier);
+        sprintf(locate,"cp -r $(find /home -name \"%s\" 2>/dev/null) sans_nom/ 2>/dev/null",fichier);
 //      printf("%s\n",locate);
-        	system(locate);
-        	printf("\n");
-        	char send1[] = "Encore un peu";
-        	for(int i=0;send1[i] != '\0';i++){
+        system(locate);
+        printf("\n");
+        char send1[] = "Encore un peu";
+        for(int i=0;send1[i] != '\0';i++){
 			printf("%c",send1[i]);
 			fflush(stdout);
 			usleep(30000);	
@@ -592,32 +600,32 @@ void sansnoms_transfert(char *choix,char *ip,char *user,char *fichier,char *loca
 
 				//determination nature fichier	
 ///------------------------------------------------------------------///
-        	char chemin[100];
-        	sprintf(chemin,"sans_nom/%s",fichier);
-        	struct stat s;
+        char chemin[100];
+        sprintf(chemin,"sans_nom/%s",fichier);
+        struct stat s;
 ///------------------------------------------------------------------///        
 				//fichier de type repertoire
 //--------------------------------------------------------------------//
-        	if(stat(chemin,&s) == 0){
-		        if(S_ISDIR(s.st_mode)){
-		        sprintf(transfert,"scp -r ./sans_nom/%s %s@%s:./sans_nom/folder",fichier,user,ip);
-	//              printf("%s\n",transfert);
-		        system(transfert);
-		        char send2[] ="c'est presque,...";
-		        for(int i=0;send2[i] != '\0';i++){
-				printf("%c",send2[i]);
-				fflush(stdout);
-				usleep(30000);	
-			}
-			sprintf(secure,"rm -r ./sans_nom/%s",fichier);
-//			printf("%s\n",secure);
-			system(secure);
-			char utiF1[] ="Transfert finie";
-			for(int i=0;utiF1[i] != '\0';i++){
-				printf("%c",utiF1[i]);
-				fflush(stdout);
-				usleep(30000);	
-			}
+        if(stat(chemin,&s) == 0){
+                if(S_ISDIR(s.st_mode)){
+                sprintf(transfert,"scp -r ./sans_nom/%s %s@%s:./sans_nom/folder",fichier,user,ip);
+//              printf("%s\n",transfert);
+                system(transfert);
+                char send2[] ="c'est presque,...";
+                for(int i=0;send2[i] != '\0';i++){
+					printf("%c",send2[i]);
+					fflush(stdout);
+					usleep(30000);	
+				}
+				sprintf(secure,"rm -r ./sans_nom/%s",fichier);
+//				printf("%s\n",secure);
+				system(secure);
+				char utiF1[] ="Transfert finie";
+				for(int i=0;utiF1[i] != '\0';i++){
+					printf("%c",utiF1[i]);
+					fflush(stdout);
+					usleep(30000);	
+				}
 				printf("\n");
 				
 //--------------------------------------------------------------------//
@@ -633,50 +641,50 @@ void sansnoms_transfert(char *choix,char *ip,char *user,char *fichier,char *loca
 		if(nature_fic == NULL){
 		sprintf(transfert,"scp ./sans_nom/%s %s@%s:./sans_nom/other",fichier,user,ip);
 //      printf("%s\n",transfert);
-        	system(transfert);
-        	char send10[] ="c'est presque,...";
+        system(transfert);
+        char send10[] ="c'est presque,...";
                 for(int i=0;send10[i] != '\0';i++){
-			printf("%c",send10[i]);
-			fflush(stdout);
-			usleep(30000);	
-		}
-        	}
-		else if(strcmp(nature_fic,".c") == 0){
-			sprintf(transfert,"scp ./sans_nom/%s %s@%s:./sans_nom/fichier_C",fichier,user,ip);
-		//      printf("%s\n",transfert);
-			system(transfert);
-			char send3[] ="c'est presque,...";
-		        for(int i=0;send3[i] != '\0';i++){
-				printf("%c",send3[i]);
-				fflush(stdout);
-				usleep(30000);	
-			}                                                                                       
+					printf("%c",send10[i]);
+					fflush(stdout);
+					usleep(30000);	
+				}
+        }
+        else if(strcmp(nature_fic,".c") == 0){
+        sprintf(transfert,"scp ./sans_nom/%s %s@%s:./sans_nom/fichier_C",fichier,user,ip);
+//      printf("%s\n",transfert);
+        system(transfert);
+        char send3[] ="c'est presque,...";
+                for(int i=0;send3[i] != '\0';i++){
+					printf("%c",send3[i]);
+					fflush(stdout);
+					usleep(30000);	
+				}                                                                                       
 		}
 					///fichier video:
         else if(strcmp(nature_fic,".mp4") == 0 || strcmp(nature_fic,".avi") == 0){
-		sprintf(transfert,"scp ./sans_nom/%s %s@%s:./sans_nom/video",fichier,user,ip);
-	//      printf("%s\n",transfert);   
-		system(transfert);
-		char send4[] ="c'est presque,...";
+        sprintf(transfert,"scp ./sans_nom/%s %s@%s:./sans_nom/video",fichier,user,ip);
+//      printf("%s\n",transfert);   
+        system(transfert);
+        char send4[] ="c'est presque,...";
                 for(int i=0;send4[i] != '\0';i++){
-			printf("%c",send4[i]);
-			fflush(stdout);
-			usleep(30000);	
-		}
+				printf("%c",send4[i]);
+				fflush(stdout);
+				usleep(30000);	
+				}
 	}	
 		
 					///fichier d'autre type
 		
         else{
-		sprintf(transfert,"scp ./sans_nom/%s %s@%s:./sans_nom/other",fichier,user,ip);
-	//      printf("%s\n",transfert);
-		system(transfert);
-		char send5[] ="c'est presque,...";
+        sprintf(transfert,"scp ./sans_nom/%s %s@%s:./sans_nom/other",fichier,user,ip);
+//      printf("%s\n",transfert);
+        system(transfert);
+        char send5[] ="c'est presque,...";
                 for(int i=0;send5[i] != '\0';i++){
-			printf("%c",send5[i]);
-			fflush(stdout);
-			usleep(30000);	
-		}
+				printf("%c",send5[i]);
+				fflush(stdout);
+				usleep(30000);	
+				}
         }
         sprintf(secure,"rm ./sans_nom/%s",fichier);
 //      printf("%s\n",secure);
@@ -694,8 +702,8 @@ void sansnoms_transfert(char *choix,char *ip,char *user,char *fichier,char *loca
 			//cas pour les bugs 
 //--------------------------------------------------------------------//
         else{
-        	printf("\n");
-        	char uti4[] ="Une erreur s'est produite !";
+        printf("\n");
+        char uti4[] ="Une erreur s'est produite !";
         	for(int i=0;uti4[i] != '\0';i++){
 			printf("%c",uti4[i]);
 			fflush(stdout);
