@@ -1,0 +1,189 @@
+body            		{font: 11px Verdana; margin: auto;text-align:center;background-image: url(images/bg.png);background-repeat: repeat-x;background-color: #DDDDDD;}
+HTML 					{height: 100.02%;}
+B               		{font-weight: bold}
+A						{font: 11px Verdana; color: #40507C; text-decoration: none}
+A:hover					{font: 11px Verdana; color: #40507C; text-decoration: underline overline}
+UL 						{margin-left:10px;padding-left:10px}
+th            			{font: 11px Verdana; font-weight: bold; border: solid 1px #AEBFE2; background-color: #AEBFE2; }
+td            			{font: 11px Verdana; }
+h1						{font: 13px Verdana; color: #000000; text-align:center; font-weight: bold; text-decoration: none; margin-top: 0px; margin-bottom:0px; padding-top: 0px; padding-bottom:0px; }
+h1.resultat				{font-size: 16px; color: #40507C; font-weight: bold; border-bottom: solid 1px red; text-align: left; margin-bottom: 1em; margin-top: 1em; width: 100%; }
+h2 						{font-size: 12px; color: #40507C; font-weight: bold; text-align: left; background-color: #EFF2FB; margin-bottom: 1em; margin-top: 1em; width: 100%; }
+h3 						{font-size: 11px; color: #40507C; font-weight: bold; text-align: left; background-color: #EFF2FB; margin-bottom: 1em; margin-top: 1em; width: 50%; }
+h6						{font-size: 11px; color: black; font-weight: blod; text-align: center, background-color: #AEBFE2; margin-bottom: 0.5em;margin-top: 0.5em; width:100%}
+INPUT, TEXTAREA, SELECT	{font: 10px Verdana; color : #000000; font-weight:bold; background-color : #D6DEF7; }
+
+#ccmlist				{padding:0;margin:0;width:100%;font: bold 12px Verdana, sans-serif;text-align:left}
+#ccmlist li				{list-style: none; margin: 0;padding:0;display: inline;text-indent:0;}
+#ccmlist li a			{font: bold 12px Verdana, sans-serif;padding: 0.2em 0.7em 0.2em 0.2em; border-top:0;border-bottom:0;border-left: 0.5em solid #EFF2FB; border-right: 1px solid #8EA6D6;background: #EFF2FB;text-decoration: none;}
+#ccmlist li a:link 		{color: #40507C; }
+#ccmlist li a:visited 	{color: #40507C; }
+#ccmlist li a:hover 	{border-left-color: red; background-color: #8EA6D6; color: #EFF2FB}
+
+#ccmicons				{padding:0;margin:0;height:25px;}
+#ccmicons a				{margin:0;padding-left:0.4em;padding-right:0.4em;}
+
+#bann_top				{border: 0; padding: 0; margin: 0; width: auto; height: 80px;  vertical-align:middle; text-align:center}
+#annotation				{ height:31px;text-align:center;width:100%;padding-top:4px;padding-bottom:4px;}
+.annotation_items 		{ border: 0; border: hidden; margin: 0; padding: 0; margin:auto; border-collapse: collapse; background-color: transparent; }
+.annotation_items td	{ vertical-align:middle;height:31px;text-indent:31px;text-align:left; padding: 0 4px;margin:0;padding:0; background-repeat: no-repeat; background-position: left center;}
+#footer {   font-size: x-small; font-weight: normal; text-align: center;  color: #7B7D7F;  margin-bottom: 1em;  width: 100%;}
+#footer a {   font-size: x-small; color: #7B7D7F;}
+#contenu				{border:0;width:100%;padding: 0}
+.cContent 				{font-size: x-small; font-weight: normal; text-decoration: none; text-align:left;padding: 0px;margin: 0px;background-color: white; border: solid 1px #AEBFE2;}
+.cHead					{background-color: #AEBFE2; text-align:center; height: 14px; width: 100%; border: 0px; margin: 0; margin-top: 0.4em; padding: 0px;  font: 11px Verdana; color: #000000; font-weight: bold;  text-decoration: none; }
+.cHead * 				{vertical-align: bottom}
+.cContent ul			{padding: 0px;margin: 0px;}
+.cContent li			{background-image: url(images/carre2.gif);	background-repeat: no-repeat;background-position: left top;	list-style-type: none; padding: 0px;padding-left: 10px;	vertical-align: text-bottom; border:0px;margin:0px;font-size: 11px;line-height: 12px;color: #EFF2FB;text-align: left;}
+ul.am 					{padding: 0px;margin: 0px;}
+ul.ac 					{padding: 0px;margin: 0px; border: 0px;}
+ul.ac li   				{background-image: url(images/carre2.gif);	background-repeat: no-repeat;background-position: left top;	list-style-type: none; padding: 0px;padding-left: 10px;	vertical-align: text-bottom; border:0px;margin:0px;font-size: 11px;line-height: 14px; }
+ul.am li   				{background-image: url(images/carre2.gif);	background-repeat: no-repeat;background-position: left top;	list-style-type: none; padding: 0px;padding-left: 10px;	vertical-align: text-bottom; border:0px;margin:0px;font-size: 11px;line-height: 14px;color: #EFF2FB;text-align: left;}
+hr						{color: #40507C; background-color: #40507C; height: 1px;border: 0; width:100%;}
+dl, dt, dd  			{margin: 0;padding: 0;list-style-type: none;}
+.info					{position: relative; z-index: 24; text-decoration: none; color: #000;}
+.info span				{position: relative; display: none;top: 0em; left: 0em; width: 400px; padding: 4px; border: 1px solid #FF0000; text-decoration: none; background-color: #D6DEF7; color: #000; text-align: left}
+.info2					{position: absolute; z-index: 24; text-decoration: none; color: #000;}
+.info2 span				{position: relative; display: none;top: 0em; left: -248px; width: 236px; padding: 4px; border: 1px solid #FF0000; text-decoration: none; background-color: #D6DEF7; color: #000; text-align: left}
+#CCMmenu 				{float:right;padding: 1px; margin: 2px; margin-left:4px; margin-top:6px;background-color:white; border: solid 1px #40507C;border-top:0;width:158px;display:block;font-width:90%}
+div#menu_rubriques		{width:100%;text-align:left;}
+div#menu_rubriques a	{display:inline;width:auto;padding:0 0.7em;border-right:1px solid #AEBFE2;border-bottom:1px solid #AEBFE2;border-top:1px solid #AEBFE2;background:#EFF2FB;}
+LI.odd					{padding-left:5px;margin-top:15px;margin-left:0px;background: rgb(239, 242, 251) none repeat scroll 0%; list-style-type: none; border: 1px solid rgb(174, 191, 226);margin-top: 8px;}
+LI.even					{padding-left:5px;margin-top:15px;margin-left:0px;background: rgb(227, 233, 249) none repeat scroll 0%; list-style-type: none; border: 1px solid rgb(174, 191, 226);margin-top: 8px;}
+LI.oddsub				{padding-left:5px;margin-top:15px;margin-left:0px;background: rgb(239, 242, 251) none repeat scroll 0%; list-style-type: none; border: 1px solid rgb(174, 191, 226);border-right-width:0px; border-bottom-width:0px;}
+LI.evensub				{padding-left:5px;margin-top:15px;margin-left:0px;background: rgb(227, 233, 249) none repeat scroll 0%; list-style-type: none; border: 1px solid rgb(174, 191, 226);border-right-width:0px; border-bottom-width:0px;}
+LI.liGris				{padding-left:5px;margin-top:15px;margin-left:0px;background: rgb(240, 240, 240) none repeat scroll 0%; list-style-type: none; border: 1px solid rgb(174, 191, 226);margin-top: 8px;}
+LI.liGrissub			{padding-left:5px;margin-top:15px;margin-left:0px;background: rgb(240, 240, 240) none repeat scroll 0%; list-style-type: none; border: 1px solid rgb(174, 191, 226);border-right-width:0px; border-bottom-width:0px;}
+LI              		{font: 11px Verdana; color: #000000; margin: 0;padding: 0;text-decoration: none; }
+.ccmmain				{width:1024px;margin: auto;border-collapse: collapse;border:hidden;border:0;padding:0;background-color:white}
+
+#discus_sim				{font-size: 12px; color: #40507C; font-weight: bold; text-align: left; background-color: transparent; margin-bottom: 0.5em; margin-top: 1em; width: 100%; border-bottom: dotted 1px black}
+#sujets_sim				{font-size: 12px; color: #40507C; font-weight: bold; text-align: left; background-color: transparent; margin-bottom: 0.5em; margin-top: 1em; width: 100%; border-bottom: dotted 1px black}
+#produits_sim			{font-size: 12px; color: #40507C; font-weight: bold; text-align: left; background-color: transparent; margin-bottom: 0.5em; margin-top: 1em; width: 100%; border-bottom: dotted 1px black}
+#liens_sponso			{font-size: 12px; color: #40507C; font-weight: bold; text-align: left; background-color: transparent; margin-bottom: 0.5em; margin-top: 1em; width: 100%; border-bottom: dotted 1px black}
+#bloc_reponse			{text-align:center; background-color: #EFF2FB;}
+.form_prerempli			{font: 11px Verdana; color: #000000; font-weight: bold; text-decoration: none; border:1px;border-color:#B7B7B7;padding:0px;width:400px;background-color:#D6DEF7}
+table.ccm 				{border: solid 1px #AEBFE2; background-color: #AEBFE2; border-collapse:collapse; border-spacing: 0; padding: 0; margin: 0; width: 100%;}
+table.ccm td 			{background-color: #EFF2FB; border: solid 1px #AEBFE2; }
+table.no       			{border: 0; border: hidden; margin: 0; padding: 0; border-collapse: collapse; background-color: transparent;}
+table.no tr				{border: 0; border: hidden; margin: 0; padding: 0; border-collapse: collapse; background-color: transparent; }
+table.no td    			{border: 0; border: hidden; margin: 0; padding: 0; border-collapse: collapse; background-color: transparent; vertical-align:top; }
+table.no th  			{border: 0; border: hidden; margin: 0; padding: 0; border-collapse: collapse; background-color: transparent; }
+table.menu 				{font: 11px Verdana; border: solid 1px #AEBFE2; background-color: #AEBFE2; padding: 0px;  }
+table.menu 				{font: 11px Verdana; border: solid 1px #AEBFE2; background-color: #AEBFE2; padding: 0px;  }
+table.menu td 			{background-color: #EFF2FB; }
+table.menu th			{color: #FF0000; font-weight: bold; background-color: #EFF2FB; }
+table.menu > th			{background-color: #AEBFE2; font-weight: bold; }
+.Texte       			{font: 11px Verdana; color: #000000; text-align:left}
+.homeLeft				{display:block;height:18px;width: 217px; background-color:white; background-image: url(images/homeleft.png); 	background-repeat: no-repeat; background-position: bottom right; 	font: 11px Verdana; color: #000000; font-weight: bold; text-decoration: none; }
+.homeLeft:hover			{display:block;height:18px;width: 217px; background-color:white; background-image: url(images/homeleft.png); 	background-repeat: no-repeat; background-position: bottom right; 	font: 11px Verdana; color: #000000; font-weight: bold; text-decoration: none; }
+.homeCenter				{display:block;height:18px;width: 202px; background-color:white; background-image: url(images/homecenter.png); 	background-repeat: repeat-x; background-position: bottom; 			font: 11px Verdana; color: #000000; font-weight: bold; text-decoration: none; text-align:center;}
+.homeCenter:hover		{display:block;height:18px;width: 202px; background-color:white; background-image: url(images/homecenter.png); 	background-repeat: repeat-x; background-position: bottom; 			font: 11px Verdana; color: #000000; font-weight: bold; text-decoration: none; text-align:center;}
+.homeRight				{display:block;height:18px;width: 217px; background-color:white; background-image: url(images/homeright.png); 	background-repeat: no-repeat; background-position: bottom left; 	font: 11px Verdana; color: #000000; font-weight: bold; text-decoration: none; }
+.homeRight:hover		{display:block;height:18px;width: 217px; background-color:white; background-image: url(images/homeright.png); 	background-repeat: no-repeat; background-position: bottom left; 	font: 11px Verdana; color: #000000; font-weight: bold; text-decoration: none; }
+.Footer       			{font: 11px Verdana; color: #000000; text-align:justify;}
+.TextePetit       		{font:  9px Verdana; color: #5364A5; }
+.Texte2					{font: 11px Verdana; color: #000000; font-weight: bold; text-decoration: none; }
+a.Texte2:hover			{font: 11px Verdana; color: #000000; font-weight: bold; text-decoration: underline overline; }
+.Titre					{font: 12px Verdana; color: #40507C; font-weight: bold; }
+.Titre:hover			{font: 12px Verdana; color: #40507C; font-weight: bold; text-decoration: underline overline}
+.Titre1 				{font-size: 12px; color: #40507C; font-weight: bold; text-align: left; background-color: #EFF2FB; margin-bottom: 1em; margin-top: 1em; width: 100%; }
+.Gris       			{font: 11px Verdana; color: #717171; /*font-style: italic;*/}
+.Form 					{border-color : #8997D4;BORDER-BOTTOM-WIDTH: 0px;BORDER-LEFT-WIDTH: 1px;BORDER-RIGHT-WIDTH: 0px;BORDER-TOP-WIDTH: 1px;FONT-FAMILY: verdana;FONT-SIZE: 8pt;HEIGHT: 16px;MARGIN-LEFT: 0px; /*vertical-align:middle*/}
+Select.Texte:hover		{font: 11px Verdana; color: #000000; }
+Input.Texte:hover		{font: 11px Verdana; color: #000000; }
+.new					{font: 10px Verdana; color: #FF0000;	font-weight: bold; letter-spacing: 4px;text-decoration: none}
+.rouge					{color: #FF0000; }
+.rouge:hover			{color: #FF0000; text-decoration: underline overline }
+.Moyen					{font: 9px Verdana; color: #000000; text-decoration: none; text-align: justify}
+.Petit					{font: 8px Verdana; color: #000000; text-decoration: none}
+a.mlink					{font: 12px Verdana; color: #40507C; text-decoration: none}
+a.mlink:hover			{font: 12px Verdana; color: #40507C; text-decoration: underline overline}
+a.mlinkb				{font: 12px Verdana; color: #40507C; font-weight: bold; text-decoration: none}
+a.mlinkb:hover			{font: 12px Verdana; color: #40507C; font-weight: bold; text-decoration: underline overline}
+a.mlink2				{font: 9px Verdana; color: #40507C; text-decoration: none}
+a.mlink2:hover			{font: 9px Verdana; color: #FF0000; text-decoration: underline overline}
+.mlink3					{font: 9px Verdana; color: #40507C; text-decoration: none}
+.mlink3:hover			{font: 9px Verdana; color: #FF0000; text-decoration: underline overline}
+.Membre1				{font: 12px Verdana; color: #4985FF; text-decoration: none}
+.Membre1:hover			{font: 12px Verdana; color: #FF0000; text-decoration: underline overline}
+.Membre0				{font: 12px Verdana; color: #88A8EA; text-decoration: none}
+.Membre0:hover			{font: 12px Verdana; color: #FF0000; text-decoration: underline overline}
+.Forumred				{font: 11px Verdana; color: #FF0000; text-decoration: none; }
+.Date       			{font: 9px Verdana; color: #000000; }
+.Date:hover       		{font: 9px Verdana; color: #FF0000; text-decoration: underline overline }
+.Datered				{font: 9px Verdana; color: #FF0000; text-decoration: none; }
+.Dategris				{font: 9px Verdana; color: #888888; text-decoration: none; }
+.Forumredb				{font: 11px Verdana; color: #FF0000; font-weight: bold;text-decoration: none; }
+.Forumredb:hover		{font: 11px Verdana; color: #FF0000; font-weight: bold;text-decoration: underline overline; }
+.Search1				{font: 12px Verdana; color: #8997D4; font-weight: bold;text-decoration: underline}
+.Search1:hover			{font: 12px Verdana; color: #8997D4; font-weight: bold;text-decoration: underline overline}
+.Search2				{font: 10px Verdana; color: #8997D4; text-decoration: underline}
+.Search2:hover			{font: 10px Verdana; color: #8997D4; text-decoration: underline overline}
+.Code                   {font-family: "Courier New", Courier, mono; font-size: 12px; color: #526982;
+    width: 100%;min-height: 30px;
+    white-space: pre-wrap; /* CSS 3 */
+    white-space: -moz-pre-wrap; /* Mozilla depuis 1999 */
+    white-space: -pre-wrap; /* Opera 4 à 6 */
+    white-space: -o-pre-wrap; /* Opera 7 */
+    word-wrap: break-word; /* IE 5.5+ */
+    overflow: auto;/* IE 6 */
+}
+.exemple            		{font-family: "Courier New", Courier, mono; font-size: 12px; color: #526982;}
+.menu 						{position: relative;width: 100%;z-index:100;}
+.menu dl 					{margin: 0 0px;border: 0 none;}
+.menu dt 					{cursor: pointer;background: #EFF2FB; border: 0px;}
+.menu dd 					{position: absolute; display: none;  top: 15px; left: 0px; padding: 0px; margin: 0px;  background: #EFF2FB; border: 1px solid #AEBFE2;}
+.menu ul 					{text-indent: 12px; padding: 0px; }
+.menu li 					{list-style-type: none; text-align: left;text-indent: 0pt; padding: 0px;width: 100%; }
+.menu li a					{font-size:12px;height: 100%;border: 0 none;}
+.menu li a:hover, #menu dt a:hover {font-size:12px;background: #e3e9f9;width: 100%;}
+.ContenuActu 				{padding-top: 10px; padding-bottom: 10px; text-align: justify; color: #000000; }
+.SeparActu					{ border-color: #7B8EC5; border-bottom-width: 1px; border-bottom-style: dashed; height: 1px;padding-top: 0px; padding-bottom: 0px; }
+.TitreActu					{font: 14px Verdana; color: #36486E; font-weight: bold;	text-decoration: none }
+.TitreActu:hover			{font: 14px Verdana; color: #36486E; font-weight: bold; text-decoration: underline overline }
+.LienActu					{font: 11px Verdana; color: #40507C; font-weight: bold; text-decoration: none}
+.LienActu:hover				{font: 11px Verdana;	color: #40507C;	font-weight: bold; text-decoration: underline overline}
+.ActuImage 					{float: left; width: 160px; height: 160px; border: 1px solid #888888text-align: center; vertical-align: middle;margin: 6px;}
+.ActuImage td 				{width: 160px; height: 160px; border: 0; text-align: center;	vertical-align: middle;}
+.ImgActu 					{border: 0; vertical-align: middle;}
+a.n 						{padding: 0;margin: 0;width: 100%;text-decoration: none;color: #000;cursor: default;display: block;background-color: #FFF;}
+a.n:hover					{text-decoration: none;color: #000;}
+a.automenu 					{padding: 0;margin: 0;width: 100%;text-decoration: none;color: #000;cursor: default;display: block;background-color: #d6def7;}
+a.automenu:hover			{text-decoration: none;color: #000;}
+a.Z:hover 					{padding: 0;margin: 0;width: 100%;text-decoration: none;color: #000;cursor: default;display: block;background-color: #FF0;}
+.v 							{background-color: #96FF96;text-align: left;}
+.v:hover 					{background-color: #5E5;}
+.r 							{background-color: #FF9696;text-align: left;}
+.r:hover 					{background-color: #E55;}
+#colonneDroite 				{width: 302px; height: 100%; border: 0;padding:1px;margin:0;margin-left:2px;vertical-align:top;}
+.menudroite					{width: 100%; border:0; margin: 0px; padding: 0; background-color: white; text-align:center;margin-top:4px;}
+.menudroite * 				{font-size: 90%;text-align:center;}
+.menudroite h2, .menudroite h2 a, .menudroite h2 a:hover {margin:0px;padding:0px; background-color: #ADBEE1; border-color:#7B8EC5; border-style:solid; border-width:0 0 1px 0; font-size:x-small; font-weight:200; text-align: center; width: 100%; display: block;}
+.menudroite h2:first-letter	{font-weight:bold; background-color:transparent;}
+
+.classement 				{margin: 0px; margin-top: 0em; padding: 0px; color:#000000; border: 1px solid #AEBFE2; display:block;}
+.classement ul 				{margin-bottom:0.10em; margin-left:0em; margin-right:0em; margin-top:0.10em; padding: 0; list-style-type:none; }
+.classement li.la 			{background-color: white}
+.classement li.lb 			{background-color: #CED7F6}
+.classement li 				{font-size:x-small; font-weight: normal; border: 0; text-align:left;}
+.classement h2, .classement h2 a, .classement h2 a:hover {margin:0px; padding:0px; background-color: #ADBEE1; color: #000000; border-color:#7B8EC5; border-style:solid; border-width:0 0 1px 0; font-size:x-small; font-weight:200; text-align: center; width: 100%; display: block;}
+.classement h2:first-letter	{font-weight:bold; background-color:transparent;}
+.classement a			{color: black; font-size:x-small; font-weight: normal; text-decoration:none; text-align:left; display:block;}
+.classement a:hover 		{color: #475479; font-size:x-small; background-color:#C6D2EA;text-decoration: none; }
+
+table.glossaire				{border: 0; border: hidden; margin: 0; padding: 0; margin:auto; border-collapse: collapse; width: 600px}
+table.glossaire td			{text-align: center; width: 18px;}
+table.forum					{border: solid 1px #AEBFE2; border-collapse:collapse; border-spacing: 0; padding: 0; margin: 0; background-color: transparent; width: 100%; }
+table.forum	th				{background-color: #AEBFE2; }
+table.forum tr.fa 			{background-color: white; }
+table.forum tr.fb 			{background-color: #E9EEF9; }
+table.forum td				{font: 9px Verdana; padding: 0; margin: 0; border-bottom: dashed 1px #AEBFE2;}
+table.forum td.fac			{text-align:center;}
+table.forum td.fbc			{text-align:center; }
+table.forum td.facr			{text-align:center;color: red;}
+table.forum td.fbcr			{text-align:center;color: red;}
+table.simili				{border: 0; border-collapse:collapse; border-spacing: 0; padding: 0; margin: 0; background-color: transparent; width: 100%; }
+table.simili th			{background-color: #AEBFE2; }
+table.simili tr.sa 			{background-color: transparent; }
+table.simili tr.sb 			{background-color: #e3e9f9; }

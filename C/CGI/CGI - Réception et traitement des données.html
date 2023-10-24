@@ -1,0 +1,264 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<!-- saved from url=(0056)https://web.maths.unsw.edu.au/~lafaye/CCM/cgi/cgiget.htm -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+<meta name="copyright" content="1998 by Jean-François Pillou">
+<meta name="ROBOTS" content="all">
+<meta name="author" content="Jean-François Pillou">
+<meta name="subject" content="CGI">
+<meta name="topic" content="CGI">
+<meta name="keywords" content="Réception de données,get,GET,post,POST,parse,parseur,paires nom/valeur,paire nom/valeur">
+<meta name="title" content="CGI - Réception et traitement des données">
+<title>CGI - Réception et traitement des données</title>
+<link rel="stylesheet" href="./CGI - Réception et traitement des données_files/ccm.css" type="text/css">
+
+
+<link rel="alternate" type="application/rss+xml" title="CCM: Actualité informatique" href="http://www.commentcamarche.net/rss/actualite.php3">
+<link rel="alternate" type="application/rss+xml" title="CCM: Actualités du site CommentCaMarche.net" href="http://www.commentcamarche.net/rss/rss.php3">
+</head>
+
+<body>
+
+<table class="ccmmain">
+<tbody><tr>
+<td height="1" width="170"><img src="./CGI - Réception et traitement des données_files/pixel_transparent.gif" height="1" width="100%" alt=""></td>
+<td height="1" width="540"><img src="./CGI - Réception et traitement des données_files/pixel_transparent.gif" height="1" width="100%" alt=""></td>
+<td height="1" width="12"><img src="./CGI - Réception et traitement des données_files/pixel_transparent.gif" height="1" width="100%" alt=""></td>
+<td height="1" width="10"><img src="./CGI - Réception et traitement des données_files/pixel_transparent.gif" height="1" width="100%" alt=""></td>
+</tr>
+
+<tr>
+<td colspan="2" bgcolor="#AEBFE2" style="vertical-align:top;text-align:left;height:46;background-color:#AEBFE2;">
+<table border="0" cellspacing="0" cellpadding="0">
+    <tbody><tr>
+    <td style="vertical-align:top;"><a href="https://web.maths.unsw.edu.au/~lafaye/CCM/index.htm" target="_top"><img src="./CGI - Réception et traitement des données_files/logotop.png" border="0" width="328" height="42" title="Comment Ca Marche - Communauté informatique" alt="Comment Ca Marche - Communauté informatique"></a></td>
+    <td style="width:30px">&nbsp;</td>
+    <td style="vertical-align:middle;text-align:left"></td></tr>
+</tbody></table>
+</td>
+<td style="background-color: #AEBFE2; vertical-align:bottom;">&nbsp;</td>
+<td style="background-color: #AEBFE2;">&nbsp;</td>
+</tr>
+
+<tr>
+<td bgcolor="#8EA6D6"><div id="ccmicons"><a href="https://web.maths.unsw.edu.au/~lafaye/CCM/index.htm"><img src="./CGI - Réception et traitement des données_files/icohome2.gif" name="icohome" alt="Accueil - Encyclopédie informatique" title="Accueil - Encyclopédie informatique" width="24" border="0"></a><a href="http://www.commentcamarche.net/encyclopedie"><img src="./CGI - Réception et traitement des données_files/icozip2.gif" name="icozip" alt="Télécharger l&#39;encyclopédie" title="Télécharger l&#39;encyclopédie" width="24" border="0"></a><a href="http://www.commentcamarche.net/ccmbugs/?Bug_url=%2Fcgi%2Fcgiget.php3#ecrire"><img src="./CGI - Réception et traitement des données_files/icowri2.gif" name="icowri" alt="Contribuer à cet article" width="24" border="0"></a><a href="http://www.commentcamarche.net/contact/"><img src="./CGI - Réception et traitement des données_files/icomail2.gif" name="icomail" alt="" title="Ecrire à Jean-Francois Pillou" width="24" border="0"></a></div></td>
+<td colspan="3" bgcolor="#8EA6D6"></td>
+</tr>
+
+<tr>
+<td height="1"><img src="./CGI - Réception et traitement des données_files/pixel_white.png" height="1" width="100%" alt=""></td>
+<td height="1"><img src="./CGI - Réception et traitement des données_files/pixel_white.png" height="1" width="100%" alt=""></td>
+<td height="1" rowspan="2"><img src="./CGI - Réception et traitement des données_files/pixel_white.png" height="1" width="12" alt=""></td>
+
+<td bgcolor="#FFFFFF" height="100%" valign="top" rowspan="2">
+</td>
+</tr>
+
+<tr><td valign="top" colspan="3"><div id="contenu"><h1> CGI - Réception et traitement des données</h1><table border="0" cellpadding="0" cellspacing="0" width="722">
+	<tbody><tr>
+		<td><img src="./CGI - Réception et traitement des données_files/cgiget.gif" alt="Réception et traitement des données par un CGI"></td>
+		<td valign="top" width="38"><a href="https://web.maths.unsw.edu.au/~lafaye/CCM/cgi/cgiput.htm"><img src="./CGI - Réception et traitement des données_files/bckward.gif" border="0" width="38" height="63" alt=""></a></td>
+		<td valign="top" width="38"><a href="https://web.maths.unsw.edu.au/~lafaye/CCM/cgi/cgienv.htm"><img src="./CGI - Réception et traitement des données_files/forward.gif" border="0" width="38" height="63" alt=""></a></td>		<td valign="top" width="63"><a href="https://web.maths.unsw.edu.au/~lafaye/CCM/index.htm"><img src="./CGI - Réception et traitement des données_files/logoPClw.gif" alt="Encyclopédie" height="60" width="63" border="0"></a></td>
+		</tr>
+</tbody></table>
+<br><div id="CCMmenu">
+<table width="156">
+<tbody><tr><th>Common Gateway Interface (CGI)</th></tr>
+<tr><td><a class="mlink" href="https://web.maths.unsw.edu.au/~lafaye/CCM/cgi/cgiintro.htm">CGI</a></td></tr>
+<tr><td><a class="mlink" href="https://web.maths.unsw.edu.au/~lafaye/CCM/cgi/cgicomm.htm">Communication entre serveur et navigateur</a></td></tr>
+<tr><td><a class="mlink" href="https://web.maths.unsw.edu.au/~lafaye/CCM/cgi/cgiput.htm">Envoi de données</a></td></tr>
+<tr><td><a class="mlink" href="https://web.maths.unsw.edu.au/~lafaye/CCM/cgi/cgiget.htm">Réception de données</a></td></tr>
+<tr><td><a class="mlink" href="https://web.maths.unsw.edu.au/~lafaye/CCM/cgi/cgienv.htm">Var. d'environnement</a></td></tr>
+<tr><th><span class="rouge">A lire aussi</span></th></tr>
+<tr><td><a class="mlink" href="https://web.maths.unsw.edu.au/~lafaye/CCM/html/htmlintro.htm">HTML</a></td></tr>
+<tr><td><a class="mlink" href="https://web.maths.unsw.edu.au/~lafaye/CCM/css/cssintro.htm">CSS</a></td></tr>
+<tr><td><a class="mlink" href="https://web.maths.unsw.edu.au/~lafaye/CCM/javascript/jsintro.htm">Javascript</a></td></tr>
+<tr><td><a class="mlink" href="https://web.maths.unsw.edu.au/~lafaye/CCM/php/phpintro.htm">PHP</a></td></tr>
+<tr><td><a class="mlink" href="https://web.maths.unsw.edu.au/~lafaye/CCM/ajax/ajax-intro.htm">AJAX</a></td></tr>
+<tr><td><a class="mlink" href="https://web.maths.unsw.edu.au/~lafaye/CCM/www/rss.htm">RSS</a></td></tr>
+<tr><td><a class="mlink" href="https://web.maths.unsw.edu.au/~lafaye/CCM/www/podcast-podcasting.htm">Podcast</a></td></tr>
+<tr><td><a class="mlink" href="https://web.maths.unsw.edu.au/~lafaye/CCM/web/webintro.htm">Webmastering</a></td></tr>
+<tr><td><a class="mlink" href="https://web.maths.unsw.edu.au/~lafaye/CCM/web/webdomain.htm">Nom de domaine</a></td></tr>
+<tr><td><a class="mlink" href="https://web.maths.unsw.edu.au/~lafaye/CCM/web/hebergement.htm">Hébergement</a></td></tr>
+<tr><td><a class="mlink" href="https://web.maths.unsw.edu.au/~lafaye/CCM/web/referencement.htm">Référencement</a></td></tr>
+<tr><td><a class="mlink" href="http://www.commentcamarche.net/faq/1-langages">FAQ langages</a></td></tr>
+<tr><td><a class="mlink" href="http://www.commentcamarche.net/faq/2-programmation">FAQ programmation</a></td></tr>
+<tr><td><a class="mlink" href="http://www.commentcamarche.net/faq/9-webmaster">FAQ webmaster</a></td></tr>
+<tr><td><a class="mlink" href="http://www.commentcamarche.net/faq/156-internet">FAQ Internet</a></td></tr>
+<tr><td><a class="mlink" href="http://www.commentcamarche.net/faq/11-reseaux">FAQ Réseaux</a></td></tr>
+</tbody></table></div>
+<hr>
+
+<a name="form" class="ancre"></a><h2>Envoyer des données à un script CGI</h2>
+
+<p align="justify">L'envoi de données à un script CGI se fait par l'intermédiaire
+d'un <a href="https://web.maths.unsw.edu.au/~lafaye/CCM/html/htmlform.htm">formulaire HTML</a>.
+
+</p><p align="justify">Les formulaires HTML se créent à l'aide de la balise &lt;FORM&gt;
+
+contenant des boutons, des champs, des listes et/ou des cases à cocher repérés
+par des noms auxquels seront associés des valeurs, fonction de la saisie des utilisateurs,
+puis d'un bouton de soumission du formulaire qui enverra l'ensemble des informations au script
+indiqué en tant qu'attribut <i>Action</i> de la balise <i>FORM</i> selon la méthode
+GET ou POST. Chaque élément du formulaire doit posséder un nom unique, de
+telle façon que la valeur associée à l'élément forme avec le nom
+de celui-ci une paire nom/valeur du type&nbsp;:
+
+</p><pre class="Code">Nom_de_l_element=valeur</pre>
+
+
+<p align="justify">L'ensemble des paires nom/valeur sont séparées par des esperluettes (le caractère
+«&nbsp;&amp;&nbsp;»). Ainsi, l'envoi d'un formulaire crée une chaîne de la forme&nbsp;:
+
+</p><pre class="Code">champ1=valeur1&amp;champ2=valeur2&amp;champ3=valeur3</pre>
+
+
+<p align="justify">L'envoi de cette chaîne se fera différemment selon que la méthode utilisée
+pour l'envoi du formulaire est GET ou POST.
+
+<a name="GET" class="ancre"></a></p><h2>Méthodes GET et POST</h2>
+
+<p align="justify">La méthode GET permet d'envoyer les éléments du formulaire
+au travers de l'<a href="https://web.maths.unsw.edu.au/~lafaye/CCM/internet/url.htm">URL</a> du script, en ajoutant l'ensemble des paires nom/valeur à l'URL
+du script, séparé de celui-ci par un point d'interrogation, ce qui donne
+un URL du type&nbsp;:
+
+</p><pre class="Code">http://nom_du_serveur/cgi-bin/script.cgi?champ1=valeur1&amp;champ2=valeur2...</pre>
+
+
+<p align="justify">Toutefois, la longueur de la chaîne URL étant limitée à 255 caractères,
+les informations situées au-delà de cette limite seront irrémédiablement perdues.
+De plus, cela crée une URL surchargée dans la barre d'adresse d'un <a href="https://web.maths.unsw.edu.au/~lafaye/CCM/www/navigateur.htm">navigateur</a> et peut dévoiler
+des informations sensibles comme un mot de passe...
+
+</p><p align="justify">Ainsi, la méthode POST est une bonne alternative à la méthode GET. Cette méthode
+code les informations de la même façon que la méthode GET (<a href="https://web.maths.unsw.edu.au/~lafaye/CCM/internet/url.htm">encodage URL</a>
+
+et paires nom/valeur) mais elle envoie les données à la suite des <a href="https://web.maths.unsw.edu.au/~lafaye/CCM/internet/http.htm">en-têtes HTTP</a>, dans un champ
+appelé <i>corps de la requête</i>. De cette façon la quantité de données envoyées
+n'est plus limitée, et est connue du serveur grâce à l'<a href="https://web.maths.unsw.edu.au/~lafaye/CCM/internet/http.htm">en-tête</a> permettant de connaître
+la taille du <i>corps de la requête</i>.
+
+<!--
+
+<a name="decodage" class="ancre"></a><h2>Le d&eacute;codage des donn&eacute;es au script CGI</h2>
+
+<p align="justify">
+
+-->
+
+</p><h2 id="discus_sim">Discussions pertinentes trouvées dans le forum</h2><table class="simili"><tbody><tr class="sb">
+<td><span class="Dategris">04/09&nbsp;15h37</span></td>
+<td style="vertical-align:middle"><a href="http://www.commentcamarche.net/forum/affich-2366233-recherche-personne-connaissant-cgi-ou-autre#2006-09-10%2012%3A05%3A18"><img src="./CGI - Réception et traitement des données_files/carrevalid.png" border="0" alt="personne connaissant cgi"></a><a href="http://www.commentcamarche.net/forum/affich-2366233-recherche-personne-connaissant-cgi-ou-autre">&nbsp;recherche personne connaissant cgi ou autre</a></td>
+<td><a href="http://www.commentcamarche.net/forum/forum-24-webmastering">Webmastering</a></td>
+<td><span class="Date">10/09&nbsp;12h05</span><span class="Date">-&gt;</span><a class="mlink2" href="http://www.commentcamarche.net/forum/affich-2366233-recherche-personne-connaissant-cgi-ou-autre#2006-09-10%2012%3A05%3A18">kifman03</a></td><td style="text-align:center"><span class="Texte">2</span></td>
+</tr>
+<tr class="sa">
+<td><span class="Dategris">25/07&nbsp;19h44</span></td>
+<td style="vertical-align:middle"><a href="http://www.commentcamarche.net/forum/affich-902433-probleme-cgi-bin#2004-07-27%2017%3A33%3A31"><img src="./CGI - Réception et traitement des données_files/carre.gif" border="0" alt="cgi bin"></a><a href="http://www.commentcamarche.net/forum/affich-902433-probleme-cgi-bin">&nbsp;probleme cgi-bin</a></td>
+<td><a href="http://www.commentcamarche.net/forum/forum-13-linux-unix">Linux/Unix</a></td>
+<td><span class="Date">27/07&nbsp;17h33</span><span class="Date">-&gt;</span><a class="mlink2" href="http://www.commentcamarche.net/forum/affich-902433-probleme-cgi-bin#2004-07-27%2017%3A33%3A31">jisisv</a></td><td style="text-align:center"><span class="Texte">12</span></td>
+</tr>
+<tr class="sb">
+<td><span class="Dategris">30/06&nbsp;17h46</span></td>
+<td style="vertical-align:middle"><a href="http://www.commentcamarche.net/forum/affich-335517-cgi-python-probleme-avec-fichiers-binaires#2003-07-01%2017%3A00%3A25"><img src="./CGI - Réception et traitement des données_files/carre.gif" border="0" alt="cgi python fichiers binaires"></a><a href="http://www.commentcamarche.net/forum/affich-335517-cgi-python-probleme-avec-fichiers-binaires">&nbsp;[CGI][Python] Problème avec fichiers binaires</a></td>
+<td><a href="http://www.commentcamarche.net/forum/forum-3-developpement">Développement</a></td>
+<td><span class="Date">01/07&nbsp;17h00</span><span class="Date">-&gt;</span><a class="mlink2" href="http://www.commentcamarche.net/forum/affich-335517-cgi-python-probleme-avec-fichiers-binaires#2003-07-01%2017%3A00%3A25">batmat</a></td><td style="text-align:center"><span class="Texte">11</span></td>
+</tr>
+<tr class="sa">
+<td><span class="Dategris">08/06&nbsp;10h18</span></td>
+<td style="vertical-align:middle"><a href="http://www.commentcamarche.net/forum/affich-1582425-script-cgi-en-perl-et-navigateur#2005-09-24%2017%3A29%3A22"><img src="./CGI - Réception et traitement des données_files/carre.gif" border="0" alt="script cgi perl navigateur"></a><a href="http://www.commentcamarche.net/forum/affich-1582425-script-cgi-en-perl-et-navigateur">&nbsp;script CGI en perl et navigateur</a></td>
+<td><a href="http://www.commentcamarche.net/forum/forum-13-linux-unix">Linux/Unix</a></td>
+<td><span class="Date">24/09&nbsp;17h29</span><span class="Date">-&gt;</span><a class="mlink2" href="http://www.commentcamarche.net/forum/affich-1582425-script-cgi-en-perl-et-navigateur#2005-09-24%2017%3A29%3A22">lami20j</a></td><td style="text-align:center"><span class="Texte">10</span></td>
+</tr>
+<tr class="sb">
+<td><span class="Dategris">10/03&nbsp;20h54</span></td>
+<td style="vertical-align:middle"><a href="http://www.commentcamarche.net/forum/affich-602258-petit-script-cgi-bin#2004-03-10%2023%3A04%3A16"><img src="./CGI - Réception et traitement des données_files/carre.gif" border="0" alt="script cgi bin"></a><a href="http://www.commentcamarche.net/forum/affich-602258-petit-script-cgi-bin">&nbsp;Petit script cgi-bin</a></td>
+<td><a href="http://www.commentcamarche.net/forum/forum-3-developpement">Développement</a></td>
+<td><span class="Date">10/03&nbsp;23h04</span><span class="Date">-&gt;</span><a class="Date" href="http://www.commentcamarche.net/forum/affich-602258-petit-script-cgi-bin#2004-03-10%2023%3A04%3A16">frzburn</a></td><td style="text-align:center"><span class="Texte">9</span></td>
+</tr>
+<tr class="sa">
+<td><span class="Dategris">10/03&nbsp;18h10</span></td>
+<td style="vertical-align:middle"><a href="http://www.commentcamarche.net/forum/affich-235259-executer-un-script-cgi#2003-03-11%2015%3A22%3A47"><img src="./CGI - Réception et traitement des données_files/carre.gif" border="0" alt="executer script cgi"></a><a href="http://www.commentcamarche.net/forum/affich-235259-executer-un-script-cgi">&nbsp;Executer un Script CGI</a></td>
+<td><a href="http://www.commentcamarche.net/forum/forum-3-developpement">Développement</a></td>
+<td><span class="Date">11/03&nbsp;15h22</span><span class="Date">-&gt;</span><a class="Date" href="http://www.commentcamarche.net/forum/affich-235259-executer-un-script-cgi#2003-03-11%2015%3A22%3A47">rania</a></td><td style="text-align:center"><span class="Texte">8</span></td>
+</tr>
+<tr class="sb">
+<td><span class="Dategris">08/09&nbsp;14h30</span></td>
+<td style="vertical-align:middle"><a href="http://www.commentcamarche.net/forum/affich-397342-hitparade-xiti-et-cgi#2003-09-09%2000%3A28%3A44"><img src="./CGI - Réception et traitement des données_files/carre.gif" border="0" alt=""></a><a href="http://www.commentcamarche.net/forum/affich-397342-hitparade-xiti-et-cgi">&nbsp;Hitparade Xiti et CGI</a></td>
+<td><a href="http://www.commentcamarche.net/forum/forum-9-suggestions">Suggestions</a></td>
+<td><span class="Date">09/09&nbsp;00h28</span><span class="Date">-&gt;</span><a class="Date" href="http://www.commentcamarche.net/forum/affich-397342-hitparade-xiti-et-cgi#2003-09-09%2000%3A28%3A44">dodo</a></td><td style="text-align:center"><span class="Texte">8</span></td>
+</tr>
+<tr class="sa">
+<td><span class="Dategris">28/10&nbsp;00h53</span></td>
+<td style="vertical-align:middle"><a href="http://www.commentcamarche.net/forum/affich-456518-labview-cgi#2003-12-05%2019%3A25%3A44"><img src="./CGI - Réception et traitement des données_files/carre.gif" border="0" alt="labview cgi"></a><a href="http://www.commentcamarche.net/forum/affich-456518-labview-cgi">&nbsp;Labview + cgi</a></td>
+<td><a href="http://www.commentcamarche.net/forum/forum-1-logiciels-pilotes">Logiciels/Pilotes</a></td>
+<td><span class="Date">05/12&nbsp;19h25</span><span class="Date">-&gt;</span><a class="mlink2" href="http://www.commentcamarche.net/forum/affich-456518-labview-cgi#2003-12-05%2019%3A25%3A44">foobar47</a></td><td style="text-align:center"><span class="Texte">8</span></td>
+</tr>
+<tr class="sb">
+<td><span class="Dategris">09/06&nbsp;11h12</span></td>
+<td style="vertical-align:middle"><a href="http://www.commentcamarche.net/forum/affich-796324-cgi-comment-transmettre-des-fichiers#2004-06-26%2014%3A11%3A31"><img src="./CGI - Réception et traitement des données_files/carre.gif" border="0" alt="cgi trans fichiers"></a><a href="http://www.commentcamarche.net/forum/affich-796324-cgi-comment-transmettre-des-fichiers">&nbsp;CGI: comment transmettre des fichiers</a></td>
+<td><a href="http://www.commentcamarche.net/forum/forum-3-developpement">Développement</a></td>
+<td><span class="Date">26/06&nbsp;14h11</span><span class="Date">-&gt;</span><a class="mlink2" href="http://www.commentcamarche.net/forum/affich-796324-cgi-comment-transmettre-des-fichiers#2004-06-26%2014%3A11%3A31">txiki</a></td><td style="text-align:center"><span class="Texte">8</span></td>
+</tr>
+<tr class="sa">
+<td><span class="Dategris">06/09&nbsp;18h32</span></td>
+<td style="vertical-align:middle"><a href="http://www.commentcamarche.net/forum/affich-987438-les-cgi-j-en-peux-plus-je-ne-comprend-rien#2004-09-07%2021%3A04%3A49"><img src="./CGI - Réception et traitement des données_files/carre.gif" border="0" alt="cgi comprend rien"></a><a href="http://www.commentcamarche.net/forum/affich-987438-les-cgi-j-en-peux-plus-je-ne-comprend-rien">&nbsp;Les CGI j'en peux plus je ne comprend rien...</a></td>
+<td><a href="http://www.commentcamarche.net/forum/forum-3-developpement">Développement</a></td>
+<td><span class="Date">07/09&nbsp;21h04</span><span class="Date">-&gt;</span><a class="Date" href="http://www.commentcamarche.net/forum/affich-987438-les-cgi-j-en-peux-plus-je-ne-comprend-rien#2004-09-07%2021%3A04%3A49">Jolkdarr</a></td><td style="text-align:center"><span class="Texte">8</span></td>
+</tr>
+	<tr class="sa">
+	<td colspan="2"><span class="Texte"><img src="./CGI - Réception et traitement des données_files/carreblock.gif" width="12" alt="" title="Discussion fermée">Discussion fermée
+    <img src="./CGI - Réception et traitement des données_files/carrevalid.png" width="12" alt="" title="Problème résolu">Problème résolu</span></td>
+	<td style="vertical-align:top;text-align:right;" colspan="3"><img src="./CGI - Réception et traitement des données_files/plus.png" alt="CGI" border="0"> Plus de discussions sur «&nbsp;<a href="http://www.commentcamarche.net/f/cgi"><b>CGI</b></a>&nbsp;»</td></tr></tbody></table>
+<br><span class="Footer">Ce document intitulé «&nbsp;<a href="http://www.commentcamarche.net/cgi/cgiget.php3">CGI - Réception et traitement des données</a>&nbsp;» issu de l'<a href="http://www.commentcamarche.net/encyclopedie/">encyclopédie</a> <a href="http://www.commentcamarche.net/informatique/informatique.php3">informatique</a> <a href="http://www.commentcamarche.net/">Comment Ça Marche</a> (<a href="http://www.commentcamarche.net/">www.commentcamarche.net</a>) est mis à disposition sous les termes de la licence <a href="https://web.maths.unsw.edu.au/~lafaye/CCM/ccmguide/ccmlicence.htm">Creative Commons</a>.
+Vous pouvez copier, modifier des copies de cette page, dans les conditions fixées par la licence, tant que cette note apparaît clairement.</span>
+<br>&nbsp;
+<center><a href="/home/henintsoa/Documents/TESTS & OTHERS/Programmation/C/CGI/Laffichage de données sur le navigateur avec les CGI.html"><img src="./CGI - Réception et traitement des données_files/bckward.gif" border="0" width="38" height="63" alt=""></a>
+<a href="/home/henintsoa/Documents/TESTS & OTHERS/Programmation/C/CGI/CGI - Les variables d'environnement.html"><img src="./CGI - Réception et traitement des données_files/forward.gif" border="0" width="38" height="63" alt=""></a></center>
+</div>
+
+</td>
+</tr>
+
+<tr><th colspan="4" style="background-color:#CED7F6">&nbsp;</th></tr>
+</tbody></table>
+<div id="footer"><br><a href="https://web.maths.unsw.edu.au/~lafaye/CCM/ccmguide/ccmintro.htm"><b>A propos</b></a> | <a href="https://web.maths.unsw.edu.au/~lafaye/CCM/ccmguide/cgu-conditions-generales.htm"><b>Conditions générales</b></a>  | © Tous droits réservés 2007 <a href="http://www.commentcamarche.net/">Quidéa</a>
+</div>
+
+<div hidden="" class="ubey-RecordingScreen-count-down ubey-RecordingScreen-count-down-container">
+    <style>
+        .ubey-RecordingScreen-count-down-container {
+            position: fixed;
+            height: 100vh;
+            width: 100vw;
+            top: 0;
+            left: 0;
+            z-index: 9999999999999;
+            background-color: rgba(0, 0, 0, 0.2);
+        }
+
+        .ubey-RecordingScreen-count-down-content {
+            position: absolute;
+            display: flex;
+            top: 50%;
+            left: 50%;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            height: 15em;
+            width: 15em;
+            transform: translate(-50%, -100%);
+            background-color: rgba(0, 0, 0, 0.6);
+            border-radius: 50%;
+        }
+
+        #ubey-RecordingScreen-count-count {
+            font-size: 14em;
+            transform: translateY(-2%);
+        }
+    </style>
+    <div class="ubey-RecordingScreen-count-down-content">
+        <span id="ubey-RecordingScreen-count-count"></span>
+    </div>
+</div></body></html>
