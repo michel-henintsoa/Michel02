@@ -102,7 +102,7 @@ int takelog(char** name){
 void createlog(int id, char* name){
     if(id==1){
         printf(
-            "Set-Cookie: %s=%d; expires: 0; httpOnly\n",name, id
+            "Set-Cookie: %s=%d; expires: Wed, 23 Oct 2030 00:00:00 GMT; HttpOnly\n",name, id
         );
         printf(
             "Status: 302 Found\n"

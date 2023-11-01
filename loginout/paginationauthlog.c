@@ -19,7 +19,11 @@ typedef struct Rest {
 void displayPages(Auth *user, int start, int end, int page, int f, char* session);
 
 int main(){
-
+    printf("Cache-Control: no-cache, no-store, must-revalidate\n"
+	    "Pragma: no-cache\n"
+	    "Expires: 0\n"
+    );
+    
     char* cookie=getenv("HTTP_COOKIE");
     if(cookie==NULL){
         printf(
