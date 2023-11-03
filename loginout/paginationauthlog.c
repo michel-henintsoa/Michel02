@@ -16,7 +16,7 @@ typedef struct Rest {
     char us[5];
     char rest[100];
 }Rest;
-void displayPages(Auth *user, int start, int end, int page, int f, char* session);
+void displayPages(Auth *user, int start, int end, int page, int f, char* id);
 
 int main(){
     printf("Cache-Control: no-cache, no-store, must-revalidate\n"
@@ -61,7 +61,17 @@ int main(){
         fclose(file);
         char id[200];
         if(query!=NULL){
-            sscanf(query, "id=%[^&]&page=%d", id, &page);
+            /* sscanf(query, "id=%[^&]&page=%d", id, &page); */
+            char* t=strtok(query, "&");
+            char* r=strtok(NULL, "&");
+
+            strtok(t, "=");
+            t=strtok(NULL, "=");
+            strcpy(id, t);
+            strtok(r, "=");
+            r=strtok(NULL, "=");
+            page=atoi(r);
+
         }
         int start=(page-1)*10;
         if(start<0)start=0;
@@ -84,7 +94,7 @@ int count(char* filename){
     fclose(f);
     return line;
 }
-void displayPages(Auth *user,int start, int end, int page, int f, char* session){
+void displayPages(Auth *user,int start, int end, int page, int f, char* id){
     printf("Content-Type: text/html\n\n");
     printf(
         "<head>"
@@ -100,7 +110,7 @@ void displayPages(Auth *user,int start, int end, int page, int f, char* session)
                 "<button class='teboka'>Log out</button>"
             "</a>"
         "</div>"
-        ,session
+        ,id
     );
     /* printf(
         "<div class='textToRight'>"
@@ -134,7 +144,7 @@ void displayPages(Auth *user,int start, int end, int page, int f, char* session)
         "</tbody></table>\n"
     );
         if (start > 0) {
-        printf("<a href='paginationauthlog.cgi?id=%s&page=%d' style='position:absolute;'><button class='teboka'>Previous</button></a>\n", session, page - 1);
+        printf("<a href='paginationauthlog.cgi?id=%s&page=%d' style='position:absolute;'><button class='teboka'>Previous</button></a>\n", id, page - 1);
     }
     
     /*for(int i=0; i<f/10; i++){
@@ -147,7 +157,7 @@ void displayPages(Auth *user,int start, int end, int page, int f, char* session)
             printf("<a href='paginationauthlog.cgi?page=%d><button>%d</button></a>\n", i+1, i+1);
         }*/
         if (end < f+1) {
-            printf("<a href='paginationauthlog.cgi?id=%spage=%d'><button class='teboka'>Next</button></a>\n",session, page + ((page==0)?2:1));
+            printf("<a href='paginationauthlog.cgi?id=%s&page=%d'><button class='teboka'>Next</button></a>\n",id, page + ((page==0)?2:1));
         }
     printf("</div>");
     printf("</body></html>\n");
